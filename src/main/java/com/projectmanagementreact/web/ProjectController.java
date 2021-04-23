@@ -37,7 +37,8 @@ public class ProjectController {
         if (errorMap != null) return errorMap;
 
         projectService.saveOrUpdateProject(project);
-        return new ResponseEntity<Project>(project, HttpStatus.CREATED);
+        //Explicit type argument Project can be replaced with <>
+        return new ResponseEntity<>(project, HttpStatus.CREATED);
 
     }
 

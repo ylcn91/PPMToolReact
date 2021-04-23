@@ -26,7 +26,7 @@ public class Project {
     private String projectName;
 
     @NotBlank(message = "Project identifier is required")
-    @Size(min = 4,max = 5,message = "Min 4, Max 5 char --> example of JIRA")
+    @Size(min = 4,max = 5,message = "Should have min 4, max 5 char")
     @Column(updatable = false,unique = true)
     private String projectIdentifier;
 
