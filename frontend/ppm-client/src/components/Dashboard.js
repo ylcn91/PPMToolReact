@@ -1,15 +1,26 @@
 import React, { Component } from 'react'
+import CreateProjectButton from './project/CreateProject';
 import ProjectItem from './project/ProjectItem'
 
 class Dashboard extends Component {
     render() {
         return (
-            <div>
-                <h1 className="alert alert-warning"> Welcome on board  </h1>     
-                <h1 className="mr-1"> Welcome on board  </h1>     
-               <ProjectItem/>
+            <div className="projects">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <h1 className="display-4 text-center">Projects</h1>
+                        <br />
+                        <CreateProjectButton/>
+                        <br/>
+                        <hr/>
+
+                        <ProjectItem/>
+                    </div>
+                </div>
             </div>
-        )
+        </div>
+        );
     }
 }
 
