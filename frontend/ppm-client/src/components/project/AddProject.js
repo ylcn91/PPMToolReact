@@ -116,7 +116,7 @@ class AddProject extends Component {
                       // onChange={this.onChange.bind(this)}
                       onChange={this.onChange}
                     ></textarea>
-                    {errors.description && (
+                      {errors.description && (
                       <div className="invalid-feedback">
                         {errors.description}
                       </div>
