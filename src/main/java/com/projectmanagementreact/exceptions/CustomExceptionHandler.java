@@ -1,5 +1,6 @@
 package com.projectmanagementreact.exceptions;
 
+import com.projectmanagementreact.domain.Employee;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -16,6 +17,14 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     public final ResponseEntity<Object> handleProjectIdExcepiton(ProjectIdException ex, WebRequest request) {
 
         ProjectIdExceptionResponse exceptionResponse = new ProjectIdExceptionResponse(ex.getMessage());
+        return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
+    }
+
+    //employee id exception?
+    @ExceptionHandler
+    public final ResponseEntity<Object> handleEmployeeIdException(EmployeeIdException ex, WebRequest request) {
+
+        EmployeeIdExceptionResponse exceptionResponse = new EmployeeIdExceptionResponse(ex.getMessage());
         return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 

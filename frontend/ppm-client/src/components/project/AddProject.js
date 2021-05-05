@@ -108,7 +108,7 @@ class AddProject extends Component {
                   <div className="form-group">
                     <textarea
                       className={classNames("form-control form-control-lg", {
-                        "is-invalid": errors.projectIdentifier,
+                        "is-invalid": errors.description,
                       })}
                       placeholder="Project Description"
                       name="description"
