@@ -3,13 +3,34 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { deleteProject } from "../../actions/projectActions";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+
 
 class Projectitem extends Component {
 
 
     onDeleteClick = id => {
-        this.props.deleteProject(id);
+      this.props.deleteProject(id);
     }
+
+    submit = id => {
+      confirmAlert({
+        title: 'Confirm to submit',
+        message: 'Are you sure to do this.',
+        buttons: [
+          {
+            label: 'Yes',
+            onClick: () => this.props.deleteProject(id)       
+          },
+          {
+            label: 'No',
+            //onClick: () => alert('Click No')
+          }
+        ]
+      });
+    };
+  
 
 
   render() {
@@ -38,7 +59,10 @@ class Projectitem extends Component {
                   </li>
                 </Link>
                 
-                  <li className="list-group-item delete" onClick={this.onDeleteClick.bind(this,project.projectIdentifier)}>
+                  <li className="list-group-item delete" onClick={
+                    //this.onDeleteClick.bind(this,project.projectIdentifier);
+                    this.submit.bind(this,project.projectIdentifier)
+                    }>
                     <i className="fa fa-minus-circle pr-1"> Delete Project</i>
                   </li>
                
