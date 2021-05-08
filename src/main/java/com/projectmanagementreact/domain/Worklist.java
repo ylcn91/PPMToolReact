@@ -2,10 +2,8 @@ package com.projectmanagementreact.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,21 +13,25 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class WorkList {
+public class Worklist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(unique = true, nullable = false)
+    @Column(nullable=false,unique = true)
     private Long id;
 
-    private String in;
-    private String out;
+    private String giris;
+    private String cikis;
     private double totalHour;
 
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "employee_id")
+    @JsonIgnore
     private Employee employee;
 
 }

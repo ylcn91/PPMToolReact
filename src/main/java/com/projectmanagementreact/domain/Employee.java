@@ -1,10 +1,7 @@
 package com.projectmanagementreact.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -22,13 +19,12 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID", unique = true, nullable = false)
-    private Long employeeId;
+    @Column(unique = true, nullable = false)
+    private Long id;
 
     private String username;
 
     @NotBlank(message = "ERP number cannot be empty.")
-    @Column(updatable = false,unique = true)
     private String erpNo;
 
     @NotBlank(message = "name and surname cannot be null.")
@@ -45,9 +41,10 @@ public class Employee {
     private int status;
     private int hospitalCode;
 
-    @OneToMany(cascade=CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name="EMPLOYEE_ID")
-    private List<WorkList> work = new ArrayList<>();
+    @OneToMany(fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,orphanRemoval = true)
+    @JoinColumn(name = "employee_id")
+    private List<Worklist> work = new ArrayList<>();
 
     @Column(updatable = false)
     @JsonFormat(pattern = "yyyy-mm-dd")

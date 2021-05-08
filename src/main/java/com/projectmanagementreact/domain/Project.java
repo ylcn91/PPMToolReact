@@ -1,10 +1,7 @@
 package com.projectmanagementreact.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -45,6 +42,9 @@ public class Project {
 
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date updated_At;
+
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,mappedBy = "project")
+    private Backlog backlog;
 
 
     @PrePersist
