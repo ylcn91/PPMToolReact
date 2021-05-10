@@ -16,6 +16,7 @@
     "bootstrap": "^4.6.0",
     "classnames": "^2.3.1",
     "formBuilder": "^3.6.2",
+    "formeo": "^1.6.2",
     "formiojs": "^4.13.1",
     "mdbreact": "^4.6.1",
     "primeicons": "^4.1.0",

@@ -1,8 +1,5 @@
 package com.projectmanagementreact.web;
 
-
-
-
 import com.google.gson.*;
 import com.projectmanagementreact.domain.FormData;
 import com.projectmanagementreact.services.FormServices;
@@ -41,7 +38,6 @@ public class FormController {
 
     @GetMapping("all")
     public Iterable<FormData> getAllForm() {
-
         return formServices.findAllForm();
     }
 

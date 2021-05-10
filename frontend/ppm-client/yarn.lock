@@ -6526,6 +6526,13 @@
     "jquery" ">=3.4.1"
     "jquery-ui-sortable" "*"
 
+"formeo@^1.6.2":
+  "integrity" "sha512-ECdzcAuo0wZpFjCWhUlosuE4Qxr9Q0oKd30etOSur9wSk0BsnOYUBIEJ8+WtqqMAKff0xiZKb9n/Yby/EYyX8A=="
+  "resolved" "https://registry.npmjs.org/formeo/-/formeo-1.6.2.tgz"
+  "version" "1.6.2"
+  dependencies:
+    "sortablejs" "1.10.2"
+
 "formiojs@^4.13.1":
   "integrity" "sha512-bd6QnFdYw8ctR4D/TvsdmKxDeYWydzv5P+zORd2t42+N4RLkud8HiqeKyOK/BIC0OZywAh6oFomSEQH4UNt/Sg=="
   "resolved" "https://registry.npmjs.org/formiojs/-/formiojs-4.13.1.tgz"
@@ -12632,6 +12639,11 @@
   "version" "1.1.2"
   dependencies:
     "is-plain-obj" "^1.0.0"
+
+"sortablejs@1.10.2":
+  "integrity" "sha512-YkPGufevysvfwn5rfdlGyrGjt7/CRHwvRPogD/lC+TnvcN29jDpCifKP+rBqf+LRldfXSTh+0CGLcSg0VIxq3A=="
+  "resolved" "https://registry.npmjs.org/sortablejs/-/sortablejs-1.10.2.tgz"
+  "version" "1.10.2"
 
 "source-list-map@^2.0.0":
   "integrity" "sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw=="

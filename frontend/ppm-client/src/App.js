@@ -9,8 +9,7 @@ import {Provider} from "react-redux";
 import store from "./store"
 import UpdateProject from './components/project/UpdateProject';
 import DatatablePage from './components/tabledemo/DatatablePage';
-import FormBuilder from './components/tabledemo/FormBuilder';
-import FormRender from './components/tabledemo/FormRender';
+import formeo from './components/tabledemo/formeo';
 
 
 
@@ -27,8 +26,8 @@ function App() {
       <Route exact path="/addProject" component={AddProject}/>
       <Route exact path="/updateProject/:id" component={UpdateProject}/>
       <Route exact path="/tabledemo" component={DatatablePage}/>      
-      <Route exact path="/formdemo" component={FormBuilder}/>    
-      <Route exact path="/renderform" component={FormRender}/>    
+      
+      
      
     </div>
     </Router>
