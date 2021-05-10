@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, GET_PROJECTS, GET_PROJECT, DELETE_PROJECT } from "./types";
+import { GET_ERRORS, GET_PROJECTS, GET_PROJECT, DELETE_PROJECT, GET_FORM, GET_FORMS } from "./types";
 
 export const createProject = (project, history) => async (dispatch) => {
   try {
@@ -27,10 +27,18 @@ export const getProjects = (project, history) => async (dispatch) => {
   });
 };
 
+export const getAllForms = (form, history) => async (dispatch) => {
+  const res = await axios.get("/api/form/all", form);
+  dispatch({
+    type: GET_FORMS,
+    payload: res.data,
+  });
+};
+
+
 export const getProject = (id, history) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/project/${id}`);
-
     dispatch({
       type: GET_PROJECT,
       payload: res.data,
