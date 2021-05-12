@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { FormEditor, FormRenderer } from './components/tabledemo/formeo'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <FormEditor />
-      <FormRenderer />
+
   </React.StrictMode>,
   document.getElementById('root')
 );
