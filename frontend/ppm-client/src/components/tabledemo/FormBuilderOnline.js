@@ -13,10 +13,17 @@ const formData = [
   ];
 
 
+ 
+
 export default class FormBuilderOnline extends Component {
     fb = createRef();
-    componentDidMount() {
-      $(this.fb.current).formBuilder({ formData });
+   
+    componentDidMount() {     
+      //$(this.fb.current).formBuilder({ formData });   
+      $(this.fb.current).formBuilder({
+        formData,
+        onSave: (event, form_schema) => alert(form_schema)
+      });
     }
   
     render() {
@@ -24,4 +31,4 @@ export default class FormBuilderOnline extends Component {
     }
 }
 
-ReactDOM.render(<FormBuilderOnline />, document.getElementById("root"));
+ReactDOM.render(<FormBuilderOnline/>, document.getElementById("root"));

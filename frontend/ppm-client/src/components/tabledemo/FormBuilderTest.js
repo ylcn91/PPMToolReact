@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { ReactFormBuilder } from 'react-form-builder2';
 import 'react-form-builder2/dist/app.css';
+import DemoBar from './demobar';
+import ReactDOM from 'react-dom';
 
 
 /*
@@ -27,8 +29,9 @@ class FormBuilderTest extends Component {
  
     render() {
    
-        return e(
+        return (
             <div>
+                <DemoBar/>
                 <ReactFormBuilder/>
                 
             </div>
@@ -36,5 +39,7 @@ class FormBuilderTest extends Component {
     }
     
 }
+
+
 
 export default FormBuilderTest;

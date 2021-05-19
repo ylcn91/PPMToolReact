@@ -23,7 +23,7 @@ export const FormRenderer = () => {
       renderContainer: rendererRef.current
     })
     const handleUpdate = ({ detail: { formData } }) => renderer.render(formData)
-  
+    
     document.addEventListener('formeoSaved', handleUpdate, false)
   }, [rendererRef])
 

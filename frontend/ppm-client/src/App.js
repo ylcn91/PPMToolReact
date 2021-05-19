@@ -12,6 +12,8 @@ import DatatablePage from './components/tabledemo/DatatablePage';
 import FormBuilderTest from './components/tabledemo/FormBuilderTest';
 import { FormEditor, FormRenderer } from './components/tabledemo/FormeoBuilderTest';
 import FormBuilderOnline from './components/tabledemo/FormBuilderOnline';
+import Demobar from './components/tabledemo/demobar';
+
 
 
 
@@ -31,9 +33,9 @@ function App() {
       <Route exact path="/tabledemo" component={DatatablePage}/>     
       <Route exact path="/formdemo" component={FormBuilderTest}/>    
       <Route exact path="/demo" component={FormEditor}/>    
- 
-      <Route exact path="/demorender" component={FormRenderer}/>   
+      <Route exact path="/demo" component={FormRenderer}/>   
       <Route exact path="/demoonline" component={FormBuilderOnline}/>   
+      <Route exact path="/demobar" component={Demobar}/>   
      
     </div>
     </Router>

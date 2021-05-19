@@ -18,6 +18,23 @@ export const createProject = (project, history) => async (dispatch) => {
   }
 };
 
+export const createForm = (form, history) => async (dispatch) => {
+  try {
+    const res = await axios.post("/api/form", form);
+    history.push("/demo");
+    dispatch({
+      type: GET_ERRORS,
+      payload: {}
+    });
+
+  } catch (err) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data
+    });
+  }
+};
+
 export const getProjects = (project, history) => async (dispatch) => {
   const res = await axios.get("/api/project/all", project);
 
